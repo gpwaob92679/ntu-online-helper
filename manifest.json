@@ -1,13 +1,20 @@
 {
   "manifest_version": 3,
-  "name": "NTU Online Helper",
-  "version": "0.1.0",
+  "name": "NTU Course Selection Helper",
+  "version": "0.2.0",
 
   "content_scripts": [
     {
       "matches": ["*://nol.ntu.edu.tw/*.php", "*://nol2.aca.ntu.edu.tw/*.php"],
       "js": ["js/page_cnt.js"],
       "all_frames": true
+    },
+    {
+      "matches": [
+        "*://if177.aca.ntu.edu.tw/rtcourse/*",
+        "*://if192.aca.ntu.edu.tw/rtcourse/*"
+      ],
+      "js": ["js/timeout_refresh.js"]
     }
   ]
 }
