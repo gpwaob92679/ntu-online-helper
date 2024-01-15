@@ -6,10 +6,12 @@ function hintText() {
       seconds_left} seconds...`;
 }
 
-if (divMain.innerText.includes('使用時間超過, 請關掉瀏覽器後重新登入系統 !')) {
+if (divMain &&
+    divMain.innerText.includes('使用時間超過, 請關掉瀏覽器後重新登入系統 !')) {
   const divHint = document.createElement('div');
   divHint.id = 'hint';
-  divHint.innerText = hintText();
+  divHint.innerText = `Timout message detected. Automatic refresh in ${
+      seconds_left} seconds...`;
   divMain.insertAdjacentElement('beforeend', divHint);
 
   const timer = setInterval(() => {
